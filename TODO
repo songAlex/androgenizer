@@ -1,0 +1,22 @@
+Suggestions:
+
+-:LIBFILTER_DROP - like other lib filters, but these libs would
+not be linked in at all.
+
+CFLAGS filters: for dropping problematic flags
+
+Add a collection of Makefile.am androgenizer templates, so we
+don't forget to include all the automake default variables.
+
+Get rid of absolute paths in output, so that generated Android.mk
+files can be distributed.
+
+Add the ability to install files as is, for example something like this:
+-:COPY_FILES_TO <target dir>	starts a new multi-module
+-:SOURCES <files>		the list of files to be copied
+-:TAGS <tags>			as usual
+LOCAL_MODULE_CLASS would probably be hardcoded to "ETC".
+How to deal with directories? Should the directory prefixes in <files> be
+preserved in the installation and to what depth? cwd? top_dir?
+Do we need to easily copy whole sub-trees?
+
